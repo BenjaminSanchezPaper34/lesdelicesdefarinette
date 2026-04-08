@@ -1,11 +1,11 @@
 /* ========================================
-   Les Délices de Farinette — Animations
-   GSAP + ScrollTrigger + Lenis
+   Les Délices de Farinette — V2 Écrin Noir
+   Hero carrousel + GSAP + Lenis
    ======================================== */
 
 // --- Lenis smooth scroll ---
 const lenis = new Lenis({
-  duration: 1.2,
+  duration: 1.4,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smooth: true,
 });
@@ -16,27 +16,20 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Connect Lenis to GSAP ScrollTrigger
 lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
+gsap.ticker.add((time) => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
-// --- Navbar scroll effect ---
+// --- Navbar scroll ---
 const navbar = document.getElementById('navbar');
 ScrollTrigger.create({
   start: 'top -80',
   onUpdate: (self) => {
-    if (self.scroll() > 80) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', self.scroll() > 80);
   },
 });
 
-// --- Mobile menu toggle ---
+// --- Mobile menu ---
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -44,8 +37,6 @@ menuToggle.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
   mobileMenu.classList.toggle('hidden');
 });
-
-// Close mobile menu on link click
 mobileMenu.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
@@ -53,102 +44,149 @@ mobileMenu.querySelectorAll('a').forEach((link) => {
   });
 });
 
-// --- Smooth scroll for anchor links ---
+// --- Anchor smooth scroll via Lenis ---
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      lenis.scrollTo(target, { offset: -80 });
-    }
+    if (target) lenis.scrollTo(target, { offset: -80 });
   });
 });
 
-// --- Hero animations ---
+// ==========================================
+// HERO CARROUSEL — Crossfade automatique
+// ==========================================
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.slide-dot');
+let currentSlide = 0;
+let slideInterval;
+
+function goToSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  dots[currentSlide].style.background = '';
+
+  currentSlide = index;
+
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+  dots[currentSlide].style.background = '#c9a96e';
+}
+
+function nextSlide() {
+  goToSlide((currentSlide + 1) % slides.length);
+}
+
+function startSlideshow() {
+  slideInterval = setInterval(nextSlide, 5000);
+}
+
+function resetSlideshow() {
+  clearInterval(slideInterval);
+  startSlideshow();
+}
+
+// Dot click navigation
+dots.forEach((dot) => {
+  dot.addEventListener('click', () => {
+    goToSlide(parseInt(dot.dataset.slide));
+    resetSlideshow();
+  });
+});
+
+startSlideshow();
+
+// ==========================================
+// HERO ANIMATIONS
+// ==========================================
 const heroElements = document.querySelectorAll('[data-hero-anim]');
-const heroTl = gsap.timeline({ delay: 0.3 });
+const heroTl = gsap.timeline({ delay: 0.5 });
 
 heroTl.to(heroElements, {
   opacity: 1,
   y: 0,
-  duration: 1,
-  stagger: 0.15,
-  ease: 'power3.out',
-});
-
-// Hero parallax on scroll
-gsap.to('.hero-bg', {
-  yPercent: 30,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '#hero',
-    start: 'top top',
-    end: 'bottom top',
-    scrub: true,
-  },
+  duration: 1.2,
+  stagger: 0.2,
+  ease: 'power2.out',
 });
 
 // Hero content fade out on scroll
 gsap.to('.hero-content', {
   opacity: 0,
-  scale: 0.95,
+  y: -30,
   ease: 'none',
   scrollTrigger: {
     trigger: '#hero',
     start: 'top top',
-    end: '60% top',
+    end: '50% top',
     scrub: true,
   },
 });
 
-// Scroll indicator fade out
-gsap.to('.scroll-indicator', {
-  opacity: 0,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '#hero',
-    start: '10% top',
-    end: '30% top',
-    scrub: true,
-  },
-});
-
-// --- Reveal animations ---
-const reveals = document.querySelectorAll('.reveal');
-
-reveals.forEach((el, i) => {
-  // Check if element is inside a staggered parent (grid)
-  const isInGrid = el.closest('.grid');
+// ==========================================
+// REVEAL ANIMATIONS — plus douces, organiques
+// ==========================================
+document.querySelectorAll('.reveal').forEach((el) => {
+  const isInGrid = el.closest('.grid') || el.closest('.flex.gap-6');
   const siblings = isInGrid ? [...isInGrid.querySelectorAll('.reveal')] : null;
   const indexInGrid = siblings ? siblings.indexOf(el) : 0;
 
   gsap.from(el, {
     opacity: 0,
-    y: 40,
-    duration: 1,
-    delay: isInGrid ? indexInGrid * 0.15 : 0,
-    ease: 'power3.out',
+    y: 30,
+    duration: 1.2,
+    delay: isInGrid ? indexInGrid * 0.12 : 0,
+    ease: 'power2.out',
     scrollTrigger: {
       trigger: el,
-      start: 'top 85%',
+      start: 'top 88%',
       toggleActions: 'play none none none',
     },
   });
 });
 
-// --- CTA buttons entrance ---
-const ctaBtns = document.querySelectorAll('.cta-btn');
-ctaBtns.forEach((btn, i) => {
-  gsap.from(btn, {
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    delay: i * 0.1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: btn,
-      start: 'top 90%',
-      toggleActions: 'play none none none',
-    },
+// ==========================================
+// SECTION ORNAMENTS — fade in au scroll
+// ==========================================
+document.querySelectorAll('.section-ornament').forEach((el) => {
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 90%',
+    onEnter: () => el.classList.add('visible'),
   });
 });
+
+// ==========================================
+// CREATION SCROLL — drag to scroll
+// ==========================================
+const scrollContainer = document.querySelector('.creation-scroll');
+if (scrollContainer) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  scrollContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    scrollContainer.style.cursor = 'grabbing';
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+  });
+
+  scrollContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    scrollContainer.style.cursor = '';
+  });
+
+  scrollContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    scrollContainer.style.cursor = '';
+  });
+
+  scrollContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    scrollContainer.scrollLeft = scrollLeft - walk;
+  });
+}
