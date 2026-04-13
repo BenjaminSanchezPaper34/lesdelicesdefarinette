@@ -6,11 +6,10 @@ const VALID_PRICES = new Set([
   'price_1TLqKQKNVCaTtYJEy4XN6scw', // Entremet Mangue 8.50€
   'price_1TLqKRKNVCaTtYJEhYUx8OmO', // Entremet Citron 8.50€
   'price_1TLqKSKNVCaTtYJE0geDcME2', // Entremet Pistache 8.50€
-  'price_1TLqKTKNVCaTtYJEcD8l0bLp', // Ube Latte 5.50€
-  'price_1TLqKUKNVCaTtYJEPaa3yycw', // Matcha Latte 5.50€
-  'price_1TLqKVKNVCaTtYJEZ7KYKMoO', // Ice Latte 5.00€
-  'price_1TLqKWKNVCaTtYJEbRZXuYcy', // Formule Classique 8.90€
-  'price_1TLqKXKNVCaTtYJEJRpB4MFN', // Formule Gourmande 12.90€
+  'price_1TLqvGKNVCaTtYJEZAg0LQBd', // Entremet Cacahuète 8.50€
+  'price_1TLqvHKNVCaTtYJE3K5M8XTS', // Entremet Noix de Cajou 8.50€
+  'price_1TLqvIKNVCaTtYJEsoPUJZSY', // Entremet Pêche 8.50€
+  'price_1TLqvJKNVCaTtYJEemTwg346', // Entremet Arachide 8.50€
 ]);
 
 module.exports = async (req, res) => {
