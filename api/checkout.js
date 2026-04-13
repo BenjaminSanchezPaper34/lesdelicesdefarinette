@@ -54,7 +54,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({ url: session.url });
   } catch (err) {
-    console.error('Stripe checkout error:', err.message);
-    return res.status(500).json({ error: 'Erreur lors de la création du paiement' });
+    console.error('Stripe checkout error:', err.message, err.type || '');
+    return res.status(500).json({ error: 'Erreur lors de la création du paiement', detail: err.message });
   }
 };
