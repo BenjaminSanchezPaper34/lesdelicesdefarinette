@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
   try {
     const { items } = req.body;
 
-    if (!items || !Array.length || !Array.isArray(items)) {
+    if (!items || !Array.isArray(items) || items.length === 0) {
       return res.status(400).json({ error: 'Panier vide' });
     }
 
@@ -50,10 +50,6 @@ module.exports = async (req, res) => {
       success_url: 'https://lesdelicesdefarinette.fr/#commander?success=true',
       cancel_url: 'https://lesdelicesdefarinette.fr/#commander',
       locale: 'fr',
-      shipping_address_collection: undefined,
-      metadata: {
-        source: 'site-web',
-      },
     });
 
     return res.status(200).json({ url: session.url });
