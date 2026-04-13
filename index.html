@@ -58,6 +58,7 @@
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#creations" class="nav-link text-white/60 hover:text-dore transition-colors">Créations</a>
+        <a href="#commander" class="nav-link text-white/60 hover:text-dore transition-colors">Commander</a>
         <a href="#apropos" class="nav-link text-white/60 hover:text-dore transition-colors">Notre histoire</a>
         <a href="#contact" class="nav-link text-white/60 hover:text-dore transition-colors">Nous trouver</a>
       </div>
@@ -70,6 +71,7 @@
     <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
       <div class="flex flex-col gap-4 text-sm font-medium">
         <a href="#creations" class="text-white/60 hover:text-dore transition-colors">Créations</a>
+        <a href="#commander" class="text-white/60 hover:text-dore transition-colors">Commander</a>
         <a href="#apropos" class="text-white/60 hover:text-dore transition-colors">Notre histoire</a>
         <a href="#contact" class="text-white/60 hover:text-dore transition-colors">Nous trouver</a>
       </div>
@@ -175,6 +177,201 @@
 
   <!-- ✦ Ornement séparateur ✦ -->
   <div class="section-ornament py-10 flex items-center justify-center gap-4 bg-noir">
+    <div class="w-12 h-[1px] bg-dore/30"></div>
+    <span class="text-dore/40 text-xs">✦</span>
+    <div class="w-12 h-[1px] bg-dore/30"></div>
+  </div>
+
+  <!-- ========== COMMANDER — Catalogue ========== -->
+  <section id="commander" class="relative py-24 md:py-32 bg-creme text-chocolat overflow-hidden">
+    <div class="absolute inset-0 paper-texture pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <p class="font-script text-dore-dark text-xl md:text-2xl mb-3">Click & Collect</p>
+        <h2 class="font-serif italic text-[clamp(32px,5vw,60px)] font-semibold tracking-[-1px] text-chocolat">
+          Commander en ligne
+        </h2>
+        <p class="text-chocolat/50 text-sm mt-4 max-w-lg mx-auto">Commandez vos pâtisseries et retirez-les en boutique. Retrait sous 24 à 48h selon les produits.</p>
+      </div>
+
+      <!-- Catégorie : Entremets -->
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-8 reveal">
+          <h3 class="font-serif italic text-2xl md:text-3xl font-semibold text-chocolat">Entremets trompe-l'œil</h3>
+          <div class="flex-1 h-[1px] bg-dore/20"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+          <!-- Produit 1 — Fraise -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Fraise" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                8,50 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Fraise</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Mousse fraise, insert confit, biscuit amande</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="fraise">
+              Commander
+            </a>
+          </div>
+
+          <!-- Produit 2 — Mangue -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Mangue" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                8,50 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Mangue</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Mousse mangue, cœur passion, sablé coco</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="mangue">
+              Commander
+            </a>
+          </div>
+
+          <!-- Produit 3 — Citron -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Citron" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                8,50 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Citron</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Crémeux citron, meringue italienne, sablé breton</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="citron">
+              Commander
+            </a>
+          </div>
+
+          <!-- Produit 4 — Pistache -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Pistache" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                8,50 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Pistache</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Mousse pistache, insert griotte, dacquoise</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="pistache">
+              Commander
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catégorie : Boissons -->
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-8 reveal">
+          <h3 class="font-serif italic text-2xl md:text-3xl font-semibold text-chocolat">Boissons Healthy</h3>
+          <div class="flex-1 h-[1px] bg-dore/20"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+          <!-- Ube Latte -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/boissons.jpg" alt="Ube Latte" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                5,50 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Ube Latte</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Lait d'igname violette, onctueux et unique</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="ube-latte">
+              Commander
+            </a>
+          </div>
+
+          <!-- Matcha Latte -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/boissons.jpg" alt="Matcha Latte" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                5,50 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Matcha Latte</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Thé matcha japonais, lait moussé</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="matcha-latte">
+              Commander
+            </a>
+          </div>
+
+          <!-- Ice Latte -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/boissons.jpg" alt="Ice Latte" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                5,00 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Ice Latte</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Espresso glacé, lait frais, glaçons</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="ice-latte">
+              Commander
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catégorie : Formules -->
+      <div>
+        <div class="flex items-center gap-4 mb-8 reveal">
+          <h3 class="font-serif italic text-2xl md:text-3xl font-semibold text-chocolat">Formules Petit-déjeuner</h3>
+          <div class="flex-1 h-[1px] bg-dore/20"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+          <!-- Formule Classique -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/petit-dejeuner.jpg" alt="Formule Classique" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                8,90 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Formule Classique</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Croissant + pain + boisson chaude + jus</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="formule-classique">
+              Commander
+            </a>
+          </div>
+
+          <!-- Formule Gourmande -->
+          <div class="product-card group reveal">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/petit-dejeuner.jpg" alt="Formule Gourmande" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                12,90 €
+              </div>
+            </div>
+            <h4 class="font-serif italic text-base md:text-lg font-semibold text-chocolat mb-0.5">Formule Gourmande</h4>
+            <p class="text-chocolat/40 text-xs mb-3">Viennoiseries + tartines + boisson + jus + yaourt</p>
+            <a href="#" class="stripe-link inline-block bg-chocolat text-creme text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-dore transition-colors duration-300" data-product="formule-gourmande">
+              Commander
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info retrait -->
+      <div class="mt-16 text-center reveal">
+        <div class="inline-flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-dore/15 rounded-full px-6 py-3">
+          <span class="text-lg">📍</span>
+          <p class="text-chocolat/60 text-sm">Retrait en boutique &middot; Avenue de la Méditerranée, Vias Plage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✦ Ornement séparateur ✦ -->
+  <div class="section-ornament py-10 flex items-center justify-center gap-4 bg-creme">
     <div class="w-12 h-[1px] bg-dore/30"></div>
     <span class="text-dore/40 text-xs">✦</span>
     <div class="w-12 h-[1px] bg-dore/30"></div>

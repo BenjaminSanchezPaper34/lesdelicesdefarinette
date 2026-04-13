@@ -130,6 +130,14 @@ body::before {
   opacity: 1;
 }
 
+/* --- Product cards --- */
+.product-card {
+  transition: transform 0.4s ease;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
 /* --- Mobile menu --- */
 #mobile-menu {
   max-height: 0;
