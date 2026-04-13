@@ -53,48 +53,17 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// ==========================================
-// HERO CARROUSEL — Crossfade automatique
-// ==========================================
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.slide-dot');
-let currentSlide = 0;
-let slideInterval;
-
-function goToSlide(index) {
-  slides[currentSlide].classList.remove('active');
-  dots[currentSlide].classList.remove('active');
-  dots[currentSlide].style.background = '';
-
-  currentSlide = index;
-
-  slides[currentSlide].classList.add('active');
-  dots[currentSlide].classList.add('active');
-  dots[currentSlide].style.background = '#c9a96e';
-}
-
-function nextSlide() {
-  goToSlide((currentSlide + 1) % slides.length);
-}
-
-function startSlideshow() {
-  slideInterval = setInterval(nextSlide, 5000);
-}
-
-function resetSlideshow() {
-  clearInterval(slideInterval);
-  startSlideshow();
-}
-
-// Dot click navigation
-dots.forEach((dot) => {
-  dot.addEventListener('click', () => {
-    goToSlide(parseInt(dot.dataset.slide));
-    resetSlideshow();
-  });
+// --- Hero video parallax on scroll ---
+gsap.to('.hero-video-wrap', {
+  yPercent: 20,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '#hero',
+    start: 'top top',
+    end: 'bottom top',
+    scrub: true,
+  },
 });
-
-startSlideshow();
 
 // ==========================================
 // HERO ANIMATIONS

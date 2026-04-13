@@ -52,35 +52,12 @@ html.lenis, html.lenis body { height: auto; }
 }
 .nav-link:hover::after { width: 100%; }
 
-/* --- Hero slideshow --- */
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-.hero-slide.active {
-  opacity: 1;
-}
-.hero-slide img {
+/* --- Hero video background --- */
+.hero-video-wrap {
   will-change: transform;
-  /* Ken Burns subtle zoom */
-  animation: kenBurns 8s ease-in-out infinite alternate;
 }
-@keyframes kenBurns {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); }
-}
-
-/* Slide dots */
-.slide-dot {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-.slide-dot.active {
-  background: #c9a96e;
-  width: 2rem;
+.hero-video-wrap video {
+  filter: brightness(0.85);
 }
 
 /* Hero filet doré animation */

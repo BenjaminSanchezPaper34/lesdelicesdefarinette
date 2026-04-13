@@ -53,8 +53,8 @@
   <!-- ========== NAV ========== -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="#" class="font-serif italic text-xl md:text-2xl font-semibold tracking-tight text-white">
-        Les Délices de Farinette
+      <a href="#" class="block">
+        <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-5 md:h-6 w-auto">
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#creations" class="nav-link text-white/60 hover:text-dore transition-colors">Créations</a>
@@ -78,45 +78,34 @@
 
   <!-- ========== HERO — Galerie défilante ========== -->
   <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-    <!-- Slideshow images -->
-    <div class="hero-slideshow absolute inset-0">
-      <div class="hero-slide active">
-        <img src="assets/img/hero-entremet.jpg" alt="Entremet trompe-l'œil fraise" class="w-full h-full object-cover">
-      </div>
-      <div class="hero-slide">
-        <img src="assets/img/boissons.jpg" alt="Boissons healthy — Ube, Matcha, Ice Latte" class="w-full h-full object-cover">
-      </div>
-      <div class="hero-slide">
-        <img src="assets/img/petit-dejeuner.jpg" alt="Petit-déjeuner et viennoiseries" class="w-full h-full object-cover">
-      </div>
-      <div class="hero-slide">
-        <img src="assets/img/storefront.jpg" alt="Devanture Les Délices de Farinette" class="w-full h-full object-cover">
-      </div>
+    <!-- Video background -->
+    <div class="hero-video-wrap absolute inset-0">
+      <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="assets/img/hero-entremet.jpg">
+        <source src="assets/img/hero-video.mp4" type="video/mp4">
+      </video>
       <!-- Vignette overlay -->
       <div class="absolute inset-0 bg-gradient-to-b from-noir/50 via-transparent to-noir/80 pointer-events-none"></div>
     </div>
 
     <!-- Content -->
     <div class="hero-content relative z-10 text-center px-6 max-w-4xl">
-      <p class="font-script text-dore text-2xl md:text-3xl mb-4 opacity-0" data-hero-anim>
+      <!-- Logo -->
+      <div class="mb-8 opacity-0" data-hero-anim>
+        <img src="assets/img/logo.svg" alt="Les Délices de Farinette" class="h-28 md:h-40 w-auto mx-auto">
+      </div>
+      <p class="font-script text-dore text-xl md:text-2xl mb-4 opacity-0" data-hero-anim>
         Boulangerie &middot; Pâtisserie artisanale
       </p>
-      <h1 class="font-serif italic text-[clamp(44px,9vw,100px)] font-bold leading-[0.9] tracking-[-2px] mb-6 opacity-0" data-hero-anim>
-        Les Délices<br>de Farinette
-      </h1>
       <!-- Filet doré décoratif -->
-      <div class="mx-auto w-16 h-[1px] bg-dore mb-6 opacity-0 hero-filet" data-hero-anim></div>
+      <div class="mx-auto w-16 h-[1px] bg-dore mb-4 opacity-0 hero-filet" data-hero-anim></div>
       <p class="text-white/50 text-sm md:text-base tracking-wide opacity-0" data-hero-anim>
         Vias Plage &middot; Ouvert 7j/7 en saison
       </p>
     </div>
 
-    <!-- Slide indicators -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-      <button class="slide-dot active w-8 h-[2px] bg-dore transition-all duration-500" data-slide="0"></button>
-      <button class="slide-dot w-8 h-[2px] bg-white/20 transition-all duration-500" data-slide="1"></button>
-      <button class="slide-dot w-8 h-[2px] bg-white/20 transition-all duration-500" data-slide="2"></button>
-      <button class="slide-dot w-8 h-[2px] bg-white/20 transition-all duration-500" data-slide="3"></button>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator opacity-0" data-hero-anim>
+      <div class="w-[1px] h-10 bg-dore/30 mx-auto mb-2"></div>
     </div>
   </section>
 
@@ -367,7 +356,7 @@
 
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col items-center gap-6 text-center">
-        <p class="font-serif italic text-2xl font-semibold">Les Délices de Farinette</p>
+        <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-6 w-auto mx-auto mb-2">
         <p class="font-script text-dore text-lg">Boulangerie &middot; Pâtisserie artisanale</p>
         <p class="text-white/30 text-xs">Vias Plage &middot; Ouvert 7j/7 en saison</p>
 
