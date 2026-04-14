@@ -150,7 +150,7 @@
         <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-6 md:h-7 w-auto">
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#creations" class="nav-link text-white/60 hover:text-dore transition-colors">Créations</a>
+        <a href="#creations" class="nav-link text-white/60 hover:text-dore transition-colors">Nos produits</a>
         <a href="#commander" class="nav-link text-white/60 hover:text-dore transition-colors">Commander</a>
         <a href="#apropos" class="nav-link text-white/60 hover:text-dore transition-colors">La boutique</a>
         <a href="#contact" class="nav-link text-white/60 hover:text-dore transition-colors">Nous trouver</a>
@@ -163,7 +163,7 @@
     </div>
     <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
       <div class="flex flex-col gap-4 text-sm font-medium">
-        <a href="#creations" class="text-white/60 hover:text-dore transition-colors">Créations</a>
+        <a href="#creations" class="text-white/60 hover:text-dore transition-colors">Nos produits</a>
         <a href="#commander" class="text-white/60 hover:text-dore transition-colors">Commander</a>
         <a href="#apropos" class="text-white/60 hover:text-dore transition-colors">La boutique</a>
         <a href="#contact" class="text-white/60 hover:text-dore transition-colors">Nous trouver</a>
@@ -215,12 +215,12 @@
     <div class="w-12 h-[1px] bg-dore/30"></div>
   </div>
 
-  <!-- ========== NOS CRÉATIONS — Scroll horizontal ========== -->
+  <!-- ========== ON VOUS PROPOSE — Scroll horizontal ========== -->
   <section id="creations" class="py-16 md:py-24 bg-noir">
     <div class="max-w-7xl mx-auto px-6 mb-12 reveal">
       <p class="font-script text-dore text-xl md:text-2xl mb-3">Fait main, tout sur place</p>
       <h2 class="font-serif italic text-[clamp(32px,5vw,60px)] font-semibold tracking-[-1px]">
-        Nos Créations
+        On vous propose
       </h2>
     </div>
 
@@ -514,58 +514,15 @@
     </div>
   </section>
 
-  <!-- ========== AVIS GOOGLE ========== -->
-  <section class="py-16 md:py-20 bg-noir relative overflow-hidden">
-    <div class="max-w-5xl mx-auto px-6">
-      <!-- Note Google -->
-      <div class="text-center mb-10 reveal">
-        <a href="https://search.google.com/local/writereview?placeid=ChIJLwBmWDP_sRIRUNeThEFWCAo" target="_blank" rel="noopener" class="inline-flex items-center gap-3 text-white/40 hover:text-dore transition-colors group">
-          <div class="flex items-center gap-1">
-            <span class="text-dore">★</span>
-            <span class="text-dore">★</span>
-            <span class="text-dore">★</span>
-            <span class="text-dore">★</span>
-            <span class="text-dore">★</span>
-          </div>
-          <span class="text-base font-medium text-white/50 group-hover:text-dore transition-colors">4.9 sur Google</span>
-        </a>
-      </div>
-
-      <!-- Avis -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Les entremets sont magnifiques et encore meilleurs en bouche. Une vraie découverte, on y retourne chaque été !"</p>
-          <footer class="flex items-center gap-2">
-            <span class="text-dore text-xs">★★★★★</span>
-            <span class="text-white/25 text-xs">— Marie L.</span>
-          </footer>
-        </blockquote>
-
-        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Meilleure boulangerie de Vias Plage, le pain est excellent et les viennoiseries du matin sont un régal. Accueil au top."</p>
-          <footer class="flex items-center gap-2">
-            <span class="text-dore text-xs">★★★★★</span>
-            <span class="text-white/25 text-xs">— Thomas D.</span>
-          </footer>
-        </blockquote>
-
-        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Les gâteaux en forme de fruits sont bluffants ! Tout est fait maison, ça se sent. Prix très correct pour la qualité."</p>
-          <footer class="flex items-center gap-2">
-            <span class="text-dore text-xs">★★★★★</span>
-            <span class="text-white/25 text-xs">— Sophie R.</span>
-          </footer>
-        </blockquote>
-      </div>
-
-      <!-- Lien discret -->
-      <div class="text-center mt-8 reveal">
-        <a href="https://search.google.com/local/writereview?placeid=ChIJLwBmWDP_sRIRUNeThEFWCAo" target="_blank" rel="noopener" class="text-white/20 text-sm hover:text-dore transition-colors">
-          Voir tous les avis →
-        </a>
-      </div>
+  <!-- ========== AVIS GOOGLE (badge discret) ========== -->
+  <div class="py-10 bg-noir">
+    <div class="flex items-center justify-center reveal">
+      <a href="https://search.google.com/local/writereview?placeid=ChIJLwBmWDP_sRIRUNeThEFWCAo" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-full px-6 py-3 hover:border-dore/20 transition-all duration-300 group">
+        <div class="flex items-center gap-0.5 text-dore text-sm">★★★★★</div>
+        <span class="text-white/40 text-sm group-hover:text-dore transition-colors">4.9 sur Google — Voir les avis</span>
+      </a>
     </div>
-  </section>
+  </div>
 
   <!-- ========== CTAs ========== -->
   <section id="cta" class="py-24 md:py-32 bg-noir relative overflow-hidden">
