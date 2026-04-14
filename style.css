@@ -26,15 +26,17 @@ html.lenis, html.lenis body { height: auto; }
   background: rgba(201, 169, 110, 0.45);
 }
 
-/* --- Safe area gradient (notch / dynamic island) --- */
+/* --- Safe area gradient + blur (notch / dynamic island) --- */
 body::after {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.9) 0%, rgba(13, 13, 13, 0.6) 40%, transparent 100%);
+  height: 130px;
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.95) 0%, rgba(13, 13, 13, 0.7) 35%, rgba(13, 13, 13, 0.3) 60%, transparent 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 49;
   pointer-events: none;
 }
@@ -43,6 +45,7 @@ body::after {
 #navbar {
   background: transparent;
   border-bottom: 1px solid transparent;
+  padding-top: env(safe-area-inset-top, 0px);
 }
 #navbar.scrolled {
   border-bottom: 1px solid rgba(201, 169, 110, 0.08);
