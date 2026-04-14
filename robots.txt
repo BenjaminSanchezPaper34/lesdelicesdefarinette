@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /commander.html
+Disallow: /cart.js
 
 Sitemap: https://lesdelicesdefarinette.fr/sitemap.xml

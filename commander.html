@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Commander en ligne — Les Délices de Farinette</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            noir: '#0d0d0d',
+            'noir-light': '#1a1a1a',
+            creme: '#f5ede0',
+            'creme-dark': '#e8dcc8',
+            dore: '#c9a96e',
+            'dore-light': '#e0c68a',
+            'dore-dark': '#a88b52',
+            chocolat: '#3c2415',
+            rose: '#d4a0a0',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            script: ['Caveat', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-noir text-white font-sans antialiased">
+
+  <!-- ========== HEADER SIMPLE ========== -->
+  <header class="bg-noir border-b border-dore/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="/" class="block">
+        <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-6 md:h-7 w-auto">
+      </a>
+      <a href="/" class="text-white/60 hover:text-dore transition-colors text-sm font-medium">&larr; Retour au site</a>
+    </div>
+  </header>
+
+  <!-- ========== COMMANDER — Catalogue ========== -->
+  <section id="commander" class="relative py-24 md:py-32 bg-creme text-chocolat overflow-hidden">
+    <div class="absolute inset-0 paper-texture pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="font-script text-dore-dark text-xl md:text-2xl mb-3">Click & Collect</p>
+        <h2 class="font-serif italic text-[clamp(32px,5vw,60px)] font-semibold tracking-[-1px] text-chocolat">
+          Commander en ligne
+        </h2>
+        <p class="text-chocolat/50 text-base mt-4 max-w-lg mx-auto">Commandez vos pâtisseries et retirez-les en boutique. Retrait sous 24 à 48h selon les produits.</p>
+      </div>
+
+      <!-- Entremets trompe-l'œil -->
+      <div>
+        <div class="flex items-center gap-4 mb-8">
+          <h3 class="font-serif italic text-2xl md:text-3xl font-semibold text-chocolat">Entremets trompe-l'œil</h3>
+          <div class="flex-1 h-[1px] bg-dore/20"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+          <!-- Fraise -->
+          <div class="product-card group" data-price="price_1TLqK3KNVCaTtYJEYLSCyebI" data-name="Entremet Fraise" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Fraise" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Fraise</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse fraise, insert confit, biscuit amande</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Mangue -->
+          <div class="product-card group" data-price="price_1TLqKQKNVCaTtYJEy4XN6scw" data-name="Entremet Mangue" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Mangue" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Mangue</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse mangue, c&oelig;ur passion, sablé coco</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Citron -->
+          <div class="product-card group" data-price="price_1TLqKRKNVCaTtYJEhYUx8OmO" data-name="Entremet Citron" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Citron" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Citron</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Crémeux citron, meringue italienne, sablé breton</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Pistache -->
+          <div class="product-card group" data-price="price_1TLqKSKNVCaTtYJE0geDcME2" data-name="Entremet Pistache" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Pistache" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Pistache</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse pistache, insert griotte, dacquoise</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Cacahuète -->
+          <div class="product-card group" data-price="price_1TLqvGKNVCaTtYJEZAg0LQBd" data-name="Entremet Cacahuète" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Cacahuète" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Cacahuète</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse cacahuète, caramel beurre salé, brownie</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Noix de Cajou -->
+          <div class="product-card group" data-price="price_1TLqvHKNVCaTtYJE3K5M8XTS" data-name="Entremet Noix de Cajou" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Noix de Cajou" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Noix de Cajou</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse noix de cajou, insert vanille, sablé noisette</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Pêche -->
+          <div class="product-card group" data-price="price_1TLqvIKNVCaTtYJEsoPUJZSY" data-name="Entremet Pêche" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Pêche" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Pêche</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse pêche, insert abricot, biscuit amande</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+
+          <!-- Arachide -->
+          <div class="product-card group" data-price="price_1TLqvJKNVCaTtYJEemTwg346" data-name="Entremet Arachide" data-unit-price="8.50">
+            <div class="relative overflow-hidden rounded-xl aspect-square mb-3 bg-white/40 border border-dore/10 group-hover:border-dore/30 transition-all duration-500">
+              <img src="assets/img/hero-entremet.jpg" alt="Entremet Arachide" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 right-3 bg-noir/80 text-white text-sm font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                8,50 &euro;
+              </div>
+            </div>
+            <h4 class="font-serif italic text-lg md:text-xl font-semibold text-chocolat mb-1">Arachide</h4>
+            <p class="text-chocolat/50 text-sm mb-3">Mousse arachide, c&oelig;ur praliné, croustillant chocolat</p>
+            <div class="cart-controls flex items-center gap-2">
+              <button class="cart-minus w-9 h-9 rounded-full border border-chocolat/20 text-chocolat flex items-center justify-center text-lg hover:bg-chocolat hover:text-creme transition-colors" aria-label="Retirer">&minus;</button>
+              <span class="cart-qty w-8 text-center font-semibold text-chocolat text-base">0</span>
+              <button class="cart-plus w-9 h-9 rounded-full bg-chocolat text-creme flex items-center justify-center text-lg hover:bg-dore transition-colors" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info retrait -->
+      <div class="mt-16 text-center">
+        <div class="inline-flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-dore/15 rounded-full px-6 py-3">
+          <span class="text-lg">📍</span>
+          <p class="text-chocolat/60 text-base">Retrait en boutique &middot; Avenue de la Méditerranée, Vias Plage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PANIER FLOTTANT ========== -->
+  <button id="cart-float" class="fixed bottom-6 right-6 z-50 bg-chocolat text-creme w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:bg-dore transition-all duration-300 scale-0 opacity-0" aria-label="Voir le panier">
+    <span class="text-2xl">🛍️</span>
+    <span id="cart-badge" class="absolute -top-1 -right-1 bg-dore text-noir text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">0</span>
+  </button>
+
+  <!-- ========== DRAWER PANIER ========== -->
+  <div id="cart-overlay" class="fixed inset-0 z-[60] bg-noir/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <div id="cart-drawer" class="fixed top-0 right-0 z-[61] h-full w-full max-w-md bg-creme shadow-2xl translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] flex flex-col">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-dore/15">
+      <h3 class="font-serif italic text-2xl font-semibold text-chocolat">Votre panier</h3>
+      <button id="cart-close" class="text-chocolat/40 hover:text-chocolat transition-colors" aria-label="Fermer">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Items list -->
+    <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+      <!-- Dynamically populated -->
+    </div>
+
+    <!-- Footer : total + checkout -->
+    <div class="border-t border-dore/15 px-6 py-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-serif italic text-lg text-chocolat">Total</span>
+        <span id="cart-total" class="text-2xl font-bold text-chocolat">0,00 &euro;</span>
+      </div>
+      <button id="cart-checkout" class="w-full bg-chocolat text-creme text-base font-semibold py-4 rounded-full hover:bg-dore transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+        Payer ma commande
+      </button>
+      <p class="text-chocolat/40 text-sm text-center mt-3">Paiement sécurisé par Stripe</p>
+    </div>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="cart.js"></script>
+</body>
+</html>
