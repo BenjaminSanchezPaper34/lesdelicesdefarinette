@@ -6,10 +6,17 @@ const VALID_PRICES = new Set([
   'price_1TLqKQKNVCaTtYJEy4XN6scw', // Entremet Mangue 8.50€
   'price_1TLqKRKNVCaTtYJEhYUx8OmO', // Entremet Citron 8.50€
   'price_1TLqKSKNVCaTtYJE0geDcME2', // Entremet Pistache 8.50€
-  'price_1TLqvGKNVCaTtYJEZAg0LQBd', // Entremet Cacahuète 8.50€
-  'price_1TLqvHKNVCaTtYJE3K5M8XTS', // Entremet Noix de Cajou 8.50€
+  'price_1TLqvHKNVCaTtYJE3K5M8XTS', // Entremet Pécan 8.50€ (ex Noix de Cajou)
   'price_1TLqvIKNVCaTtYJEsoPUJZSY', // Entremet Pêche 8.50€
   'price_1TLqvJKNVCaTtYJEemTwg346', // Entremet Arachide 8.50€
+  // TODO: créer les Stripe Prices pour les nouveaux parfums et remplacer les placeholders
+  'price_vanille',                    // Entremet Vanille 8.50€
+  'price_pomme',                      // Entremet Pomme 8.50€
+  'price_framboise',                  // Entremet Framboise 8.50€
+  'price_coco',                       // Entremet Coco 8.50€
+  'price_cabosse',                    // Entremet Cabosse 8.50€
+  'price_myrtille',                   // Entremet Myrtille 8.50€
+  'price_tulipe',                     // Entremet Tulipe 8.50€
 ]);
 
 module.exports = async (req, res) => {
@@ -46,8 +53,8 @@ module.exports = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       line_items,
-      success_url: 'https://lesdelicesdefarinette.fr/#commander?success=true',
-      cancel_url: 'https://lesdelicesdefarinette.fr/#commander',
+      success_url: 'https://lesdelicesdefarinette.fr/commander.html?success=true',
+      cancel_url: 'https://lesdelicesdefarinette.fr/commander.html',
       locale: 'fr',
     });
 
