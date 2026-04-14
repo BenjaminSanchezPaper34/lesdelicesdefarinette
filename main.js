@@ -22,11 +22,21 @@ gsap.ticker.lagSmoothing(0);
 
 // --- Navbar scroll ---
 const navbar = document.getElementById('navbar');
+const navLogo = document.getElementById('nav-logo');
 ScrollTrigger.create({
   start: 'top -80',
   onUpdate: (self) => {
-    navbar.classList.toggle('scrolled', self.scroll() > 80);
+    const scrolled = self.scroll() > 80;
+    navbar.classList.toggle('scrolled', scrolled);
   },
+});
+
+// --- Nav logo : apparaît quand le hero n'est plus visible ---
+ScrollTrigger.create({
+  trigger: '#hero',
+  start: 'bottom top+=80',
+  onEnterBack: () => navLogo.style.opacity = '0',
+  onLeave: () => navLogo.style.opacity = '1',
 });
 
 // --- Mobile menu ---
