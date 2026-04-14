@@ -26,17 +26,17 @@ html.lenis, html.lenis body { height: auto; }
   background: rgba(201, 169, 110, 0.45);
 }
 
-/* --- Safe area gradient + blur (notch / dynamic island) --- */
+/* --- Safe area gradient + blur sur le contenu qui passe sous le header --- */
 body::after {
   content: '';
   position: fixed;
-  top: 0;
+  top: -50px;
   left: 0;
   right: 0;
-  height: 130px;
-  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.95) 0%, rgba(13, 13, 13, 0.7) 35%, rgba(13, 13, 13, 0.3) 60%, transparent 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  height: calc(180px + env(safe-area-inset-top, 0px));
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0.95) 30%, rgba(13, 13, 13, 0.6) 55%, rgba(13, 13, 13, 0.2) 75%, transparent 100%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 49;
   pointer-events: none;
 }
