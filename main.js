@@ -34,7 +34,7 @@ ScrollTrigger.create({
 // --- Nav logo : apparaît quand le hero n'est plus visible ---
 ScrollTrigger.create({
   trigger: '#hero',
-  start: 'bottom top+=50',
+  start: 'bottom top+=80',
   onEnterBack: () => navLogo.style.opacity = '0',
   onLeave: () => navLogo.style.opacity = '1',
 });
