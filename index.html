@@ -228,7 +228,7 @@
     <div class="creation-scroll overflow-x-auto pb-6 px-6 md:px-12">
       <div class="flex gap-6 md:gap-8 w-max">
         <!-- Card 1 — Entremets -->
-        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal">
+        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal text-center">
           <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4">
             <img src="assets/img/hero-entremet.jpg" alt="Entremets trompe-l'œil façon fruits" class="w-full h-full object-cover" loading="lazy">
           </div>
@@ -237,7 +237,7 @@
         </div>
 
         <!-- Card 2 — Boissons -->
-        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal">
+        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal text-center">
           <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4">
             <img src="assets/img/boissons.jpg" alt="Ube Latte, Matcha Latte, Ice Latte" class="w-full h-full object-cover" loading="lazy">
           </div>
@@ -246,7 +246,7 @@
         </div>
 
         <!-- Card 3 — Petit-déjeuner -->
-        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal">
+        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal text-center">
           <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4">
             <img src="assets/img/petit-dejeuner.jpg" alt="Petit-déjeuner croissants et café" class="w-full h-full object-cover" loading="lazy">
           </div>
@@ -255,7 +255,7 @@
         </div>
 
         <!-- Card 4 — Boulangerie -->
-        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal">
+        <div class="creation-card w-[280px] md:w-[350px] flex-shrink-0 reveal text-center">
           <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4">
             <img src="assets/img/storefront.jpg" alt="La boutique Les Délices de Farinette" class="w-full h-full object-cover" loading="lazy">
           </div>
@@ -266,7 +266,7 @@
     </div>
 
     <!-- Scroll hint -->
-    <div class="flex items-center gap-2 px-6 md:px-12 mt-4 text-white/20 text-sm">
+    <div class="flex items-center justify-center gap-2 px-6 md:px-12 mt-4 text-white/20 text-sm">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       <span>Glissez pour découvrir</span>
     </div>
@@ -514,12 +514,44 @@
     </div>
   </section>
 
-  <!-- ========== AVIS GOOGLE (Elfsight widget) ========== -->
+  <!-- ========== AVIS GOOGLE ========== -->
   <section class="py-16 md:py-20 bg-noir">
-    <div class="max-w-5xl mx-auto px-6 reveal">
-      <!-- Elfsight Google Reviews | LES DELICES DE FARINETTE - VIAS -->
-      <script src="https://elfsightcdn.com/platform.js" async></script>
-      <div class="elfsight-app-dce12845-0ab9-4c85-97e1-8c8550dc5516" data-elfsight-app-lazy></div>
+    <div class="max-w-5xl mx-auto px-6">
+      <!-- Note Google -->
+      <div class="text-center mb-10 reveal">
+        <a href="https://search.google.com/local/writereview?placeid=ChIJLwBmWDP_sRIRUNeThEFWCAo" target="_blank" rel="noopener" class="inline-flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div class="flex items-center gap-0.5 text-dore text-lg">★★★★<span class="text-white/20">★</span></div>
+          <span class="text-white/50 text-base font-medium">4,3 sur Google · 113 avis</span>
+        </a>
+      </div>
+
+      <!-- Avis réels -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+          <div class="flex items-center gap-0.5 text-dore text-xs mb-3">★★★★★</div>
+          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Sans aucun doute, les meilleures pâtisseries de Vias ! Large choix de pâtisseries, pains, boissons, personnel très accueillant. Je recommande les yeux fermés"</p>
+          <footer class="text-white/25 text-xs">— Mallaury V.</footer>
+        </blockquote>
+
+        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+          <div class="flex items-center gap-0.5 text-dore text-xs mb-3">★★★★★</div>
+          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Viennoiseries, pâtisseries, pains, tout est bon ici ! On peut même y prendre une petite collation. Un vrai artisan boulanger."</p>
+          <footer class="text-white/25 text-xs">— Nicolas L.</footer>
+        </blockquote>
+
+        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+          <div class="flex items-center gap-0.5 text-dore text-xs mb-3">★★★★★</div>
+          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Du très bon pain même avec des températures caniculaires. Félicitations à toute l'équipe !"</p>
+          <footer class="text-white/25 text-xs">— Alain P.</footer>
+        </blockquote>
+      </div>
+
+      <!-- Lien discret -->
+      <div class="text-center mt-8 reveal">
+        <a href="https://search.google.com/local/writereview?placeid=ChIJLwBmWDP_sRIRUNeThEFWCAo" target="_blank" rel="noopener" class="text-white/20 text-sm hover:text-dore transition-colors">
+          Voir tous les avis →
+        </a>
+      </div>
     </div>
   </section>
 
