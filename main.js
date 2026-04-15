@@ -3,6 +3,13 @@
    Hero carrousel + GSAP + Lenis
    ======================================== */
 
+// --- Real viewport height for iOS (address bar) ---
+function setVh() {
+  document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+}
+setVh();
+window.addEventListener('resize', setVh);
+
 // --- Lenis smooth scroll ---
 const lenis = new Lenis({
   duration: 1.4,
