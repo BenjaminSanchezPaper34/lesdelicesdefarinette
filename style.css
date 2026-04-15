@@ -149,12 +149,24 @@ body::before {
   transform: translateY(-3px);
 }
 
-/* --- Mobile menu fullscreen overlay --- */
-#mobile-menu {
-  will-change: transform;
-}
+/* --- Mobile menu fullscreen fade overlay --- */
 #mobile-menu.open {
-  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Burger → Cross animation --- */
+#menu-toggle.active .menu-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+#menu-toggle.active .menu-bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active .menu-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+#menu-toggle.active .menu-bar {
+  background: white;
 }
 
 /* --- Cart float animation --- */

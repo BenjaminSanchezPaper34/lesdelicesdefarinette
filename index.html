@@ -151,30 +151,19 @@
         <a href="#apropos" class="nav-link text-white/60 hover:text-dore transition-colors">La boutique</a>
         <a href="#contact" class="nav-link text-white/60 hover:text-dore transition-colors">Nous trouver</a>
       </div>
-      <button id="menu-toggle" class="md:hidden text-white/60 hover:text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+      <button id="menu-toggle" class="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-[6px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" aria-label="Menu">
+        <span class="menu-bar block w-6 h-[1.5px] bg-white/70 rounded-full transition-all duration-400 origin-center"></span>
+        <span class="menu-bar block w-6 h-[1.5px] bg-white/70 rounded-full transition-all duration-400 origin-center"></span>
+        <span class="menu-bar block w-6 h-[1.5px] bg-white/70 rounded-full transition-all duration-400 origin-center"></span>
       </button>
     </div>
   </nav>
 
-  <!-- ========== MOBILE MENU — Fullscreen overlay ========== -->
-  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-noir flex flex-col translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] md:hidden">
-    <!-- Header -->
-    <div class="flex items-center justify-between px-6 py-5" style="padding-top: env(safe-area-inset-top, 0px);">
-      <a href="#" class="block">
-        <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-6 w-auto">
-      </a>
-      <button id="menu-close" class="text-white/60 hover:text-white transition-colors" aria-label="Fermer">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-    </div>
+  <!-- ========== MOBILE MENU — Fullscreen fade overlay ========== -->
+  <div id="mobile-menu" class="fixed inset-0 z-[45] bg-noir flex flex-col opacity-0 pointer-events-none transition-opacity duration-400 md:hidden">
 
-    <!-- Links -->
-    <nav class="flex-1 flex flex-col justify-center px-6">
+    <!-- Links — centré verticalement, commence sous la navbar -->
+    <nav class="flex-1 flex flex-col justify-center px-8 pt-20">
       <a href="#creations" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">Nos produits</a>
       <a href="#commander" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">Commander</a>
       <a href="#apropos" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">La boutique</a>
@@ -183,7 +172,7 @@
     </nav>
 
     <!-- Footer infos -->
-    <div class="px-6 pb-8" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));">
+    <div class="px-8 pb-8" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));">
       <a href="tel:0467217659" class="flex items-center gap-3 mb-4">
         <span class="w-10 h-10 rounded-full bg-dore/15 flex items-center justify-center text-dore text-sm">📞</span>
         <span class="text-white font-medium text-base">04 67 21 76 59</span>

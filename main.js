@@ -39,26 +39,28 @@ ScrollTrigger.create({
   onLeave: () => navLogo.style.opacity = '1',
 });
 
-// --- Mobile menu fullscreen ---
+// --- Mobile menu fullscreen fade ---
 const menuToggle = document.getElementById('menu-toggle');
-const menuClose = document.getElementById('menu-close');
 const mobileMenu = document.getElementById('mobile-menu');
 
-function openMenu() {
-  mobileMenu.classList.add('open');
-  lenis.stop();
+function toggleMenu() {
+  const isOpen = mobileMenu.classList.toggle('open');
+  menuToggle.classList.toggle('active', isOpen);
+  if (isOpen) {
+    lenis.stop();
+  } else {
+    lenis.start();
+  }
 }
 
-function closeMenu() {
-  mobileMenu.classList.remove('open');
-  lenis.start();
-}
-
-menuToggle.addEventListener('click', openMenu);
-menuClose.addEventListener('click', closeMenu);
+menuToggle.addEventListener('click', toggleMenu);
 
 mobileMenu.querySelectorAll('.mobile-menu-link').forEach((link) => {
-  link.addEventListener('click', () => closeMenu());
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuToggle.classList.remove('active');
+    lenis.start();
+  });
 });
 
 // --- Anchor smooth scroll via Lenis ---
