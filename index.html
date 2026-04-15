@@ -157,15 +157,41 @@
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
-      <div class="flex flex-col gap-4 text-sm font-medium">
-        <a href="#creations" class="text-white/60 hover:text-dore transition-colors">Nos produits</a>
-        <a href="#commander" class="text-white/60 hover:text-dore transition-colors">Commander</a>
-        <a href="#apropos" class="text-white/60 hover:text-dore transition-colors">La boutique</a>
-        <a href="#contact" class="text-white/60 hover:text-dore transition-colors">Nous trouver</a>
-      </div>
-    </div>
   </nav>
+
+  <!-- ========== MOBILE MENU — Fullscreen overlay ========== -->
+  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-noir flex flex-col translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] md:hidden">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-5" style="padding-top: env(safe-area-inset-top, 0px);">
+      <a href="#" class="block">
+        <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-6 w-auto">
+      </a>
+      <button id="menu-close" class="text-white/60 hover:text-white transition-colors" aria-label="Fermer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Links -->
+    <nav class="flex-1 flex flex-col justify-center px-6">
+      <a href="#creations" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">Nos produits</a>
+      <a href="#commander" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">Commander</a>
+      <a href="#apropos" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">La boutique</a>
+      <a href="#avis" class="mobile-menu-link block py-5 border-b border-white/10 text-white text-2xl font-semibold tracking-tight">Avis clients</a>
+      <a href="#contact" class="mobile-menu-link block py-5 text-white text-2xl font-semibold tracking-tight">Nous trouver</a>
+    </nav>
+
+    <!-- Footer infos -->
+    <div class="px-6 pb-8" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));">
+      <a href="tel:0467217659" class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-dore/15 flex items-center justify-center text-dore text-sm">📞</span>
+        <span class="text-white font-medium text-base">04 67 21 76 59</span>
+      </a>
+      <p class="text-white/40 text-sm mb-1">Ouvert 7j/7 en saison</p>
+      <p class="text-white/40 text-sm">Avenue de la Méditerranée, 34450 Vias Plage</p>
+    </div>
+  </div>
 
   <!-- ========== HERO — Galerie défilante ========== -->
   <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">

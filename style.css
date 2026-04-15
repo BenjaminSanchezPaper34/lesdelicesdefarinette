@@ -149,16 +149,12 @@ body::before {
   transform: translateY(-3px);
 }
 
-/* --- Mobile menu --- */
+/* --- Mobile menu fullscreen overlay --- */
 #mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  will-change: transform;
 }
 #mobile-menu.open {
-  display: block;
-  max-height: 200px;
-  padding-bottom: 1rem;
+  transform: translateX(0);
 }
 
 /* --- Cart float animation --- */
