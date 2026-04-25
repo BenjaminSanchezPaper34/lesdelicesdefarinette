@@ -142,11 +142,20 @@ body::before {
 }
 
 /* --- Product cards --- */
+.product-card,
+.product-card-disabled {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .product-card {
   transition: transform 0.4s ease;
 }
 .product-card:hover {
   transform: translateY(-3px);
+}
+.product-card .cart-controls {
+  margin-top: auto;
 }
 
 /* --- Mobile menu fullscreen fade overlay --- */
