@@ -147,15 +147,22 @@ body::before {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(60, 36, 21, 0.08);
+  border-radius: 16px;
 }
 .product-card {
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 .product-card:hover {
   transform: translateY(-3px);
+  border-color: rgba(201, 169, 110, 0.35);
+  box-shadow: 0 10px 30px rgba(60, 36, 21, 0.06);
 }
 .product-card .cart-controls {
   margin-top: auto;
+  padding-top: 8px;
 }
 
 /* --- Mobile menu fullscreen fade overlay --- */
