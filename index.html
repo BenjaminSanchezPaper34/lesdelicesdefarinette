@@ -11,6 +11,16 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lesdelicesdefarinette.fr/">
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Perf : préconnexions CDN + préchargement du visuel hero -->
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero-entremet.webp" fetchpriority="high">
+
   <!-- Geo Tags — référencement local -->
   <meta name="geo.region" content="FR-34">
   <meta name="geo.placename" content="Vias Plage">
@@ -21,6 +31,9 @@
   <meta property="og:title" content="Les Délices de Farinette — Boulangerie Pâtisserie à Vias Plage">
   <meta property="og:description" content="Boulangerie-pâtisserie artisanale à Vias Plage. Entremets trompe-l'œil, viennoiseries fraîches, pain maison. Ouverte 7j/7 en saison.">
   <meta property="og:image" content="https://lesdelicesdefarinette.fr/assets/img/hero-entremet.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1986">
+  <meta property="og:image:alt" content="Entremet trompe-l'œil fraise — Les Délices de Farinette, Vias Plage">
   <meta property="og:url" content="https://lesdelicesdefarinette.fr/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
@@ -55,6 +68,7 @@
       "latitude": 43.2958,
       "longitude": 3.4199
     },
+    "hasMap": "https://maps.google.com/?cid=11566761260272662352",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -82,7 +96,27 @@
       "reviewCount": "115",
       "bestRating": "5",
       "worstRating": "1"
-    }
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Mallaury V." },
+        "reviewBody": "Sans aucun doute, les meilleures pâtisseries de Vias ! Large choix de pâtisseries, pains, boissons, personnel très accueillant. Je recommande les yeux fermés."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Nicolas L." },
+        "reviewBody": "Viennoiseries, pâtisseries, pains, tout est bon ici ! On peut même y prendre une petite collation. Un vrai artisan boulanger."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Alain P." },
+        "reviewBody": "Du très bon pain même avec des températures caniculaires. Félicitations à toute l'équipe !"
+      }
+    ]
   }
   </script>
 
@@ -256,9 +290,9 @@
       <div class="mb-8 opacity-0" data-hero-anim>
         <img src="assets/img/logo.svg" alt="Les Délices de Farinette" class="h-28 md:h-40 w-auto mx-auto">
       </div>
-      <p class="font-script text-dore text-xl md:text-2xl mb-4 opacity-0" data-hero-anim>
-        Boulangerie &middot; Pâtisserie artisanale
-      </p>
+      <h1 class="font-script text-dore text-xl md:text-2xl mb-4 opacity-0 font-normal" data-hero-anim>
+        <span class="sr-only">Les Délices de Farinette — </span>Boulangerie &middot; Pâtisserie artisanale<span class="sr-only"> à Vias Plage</span>
+      </h1>
       <!-- Filet doré décoratif -->
       <div class="mx-auto w-16 h-[1px] bg-dore mb-4 opacity-0 hero-filet" data-hero-anim></div>
       <p class="text-white/80 text-base md:text-lg tracking-wide opacity-0" data-hero-anim>
@@ -480,7 +514,7 @@
   </section>
 
   <!-- ========== AVIS GOOGLE ========== -->
-  <section class="py-16 md:py-20 bg-noir">
+  <section id="avis" class="py-16 md:py-20 bg-noir">
     <div class="max-w-5xl mx-auto px-6">
       <!-- Note Google -->
       <div class="text-center mb-10 reveal">
@@ -636,7 +670,10 @@
       <div class="flex flex-col items-center gap-6 text-center">
         <img src="assets/img/logo-banniere.svg" alt="Les Délices de Farinette" class="h-7 w-auto mx-auto mb-2">
         <p class="font-script text-dore text-lg">Boulangerie &middot; Pâtisserie artisanale</p>
-        <p class="text-white/30 text-sm">Vias Plage &middot; Ouvert 7j/7 en saison</p>
+        <address class="not-italic text-white/30 text-sm leading-relaxed">
+          Avenue de la Méditerranée, 34450 Vias Plage<br>
+          Ouvert 7j/7 en saison &middot; 07h00 — 19h00 &middot; <a href="tel:0467217659" class="hover:text-dore transition-colors">04 67 21 76 59</a>
+        </address>
 
         <div class="flex items-center gap-6 mt-2">
           <!-- Instagram -->
@@ -662,9 +699,9 @@
   </footer>
 
   <!-- ========== SCRIPTS ========== -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script defer src="main.js"></script>
 </body>
 </html>
