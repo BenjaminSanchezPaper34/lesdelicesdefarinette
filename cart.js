@@ -164,5 +164,24 @@ cartCheckout.addEventListener('click', async () => {
   }
 });
 
+// Confirmation après paiement (retour Stripe avec ?success=true)
+if (new URLSearchParams(window.location.search).get('success') === 'true') {
+  const banner = document.createElement('div');
+  banner.className = 'fixed top-0 left-0 right-0 z-[60] bg-chocolat text-creme text-center px-6 py-4 shadow-lg';
+  banner.innerHTML = `
+    <p class="font-semibold text-base">✓ Merci, votre commande est confirmée !</p>
+    <p class="text-creme/70 text-sm mt-1">Vous recevrez un reçu par email. Retrait en boutique au créneau choisi — Avenue de la Méditerranée, Vias Plage.</p>
+  `;
+  document.body.appendChild(banner);
+  // Nettoie l'URL pour éviter de réafficher la bannière au refresh
+  window.history.replaceState({}, '', window.location.pathname);
+  setTimeout(() => {
+    banner.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    banner.style.opacity = '0';
+    banner.style.transform = 'translateY(-100%)';
+    setTimeout(() => banner.remove(), 700);
+  }, 8000);
+}
+
 // Init
 updateCart();

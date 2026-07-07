@@ -9,14 +9,13 @@ const VALID_PRICES = new Set([
   'price_1TLqvHKNVCaTtYJE3K5M8XTS', // Entremet Pécan 8.50€ (ex Noix de Cajou)
   'price_1TLqvIKNVCaTtYJEsoPUJZSY', // Entremet Pêche 8.50€
   'price_1TLqvJKNVCaTtYJEemTwg346', // Entremet Arachide 8.50€
-  // TODO: créer les Stripe Prices pour les nouveaux parfums et remplacer les placeholders
-  'price_vanille',                    // Entremet Vanille 8.50€
-  'price_pomme',                      // Entremet Pomme 8.50€
-  'price_framboise',                  // Entremet Framboise 8.50€
-  'price_coco',                       // Entremet Coco 8.50€
-  'price_cabosse',                    // Entremet Cabosse 8.50€
-  'price_myrtille',                   // Entremet Myrtille 8.50€
-  'price_tulipe',                     // Entremet Tulipe 8.50€
+  'price_1TqUBzKNVCaTtYJE2Wx6e4xl', // Entremet Vanille 8.50€
+  'price_1TqUBzKNVCaTtYJEeZf6oEQ9', // Entremet Pomme 8.50€
+  'price_1TqUC0KNVCaTtYJEBYZ9kzfF', // Entremet Framboise 8.50€
+  'price_1TqUC0KNVCaTtYJEIZUPD7JM', // Entremet Coco 8.50€
+  'price_1TqUC1KNVCaTtYJET6LRaElX', // Entremet Cabosse 8.50€
+  'price_1TqUC1KNVCaTtYJE85Vf6Nuv', // Entremet Myrtille 8.50€
+  'price_1TqUC2KNVCaTtYJEgC7KWFFA', // Entremet Tulipe 8.50€
 ]);
 
 module.exports = async (req, res) => {
@@ -56,6 +55,31 @@ module.exports = async (req, res) => {
       success_url: 'https://lesdelicesdefarinette.fr/commander.html?success=true',
       cancel_url: 'https://lesdelicesdefarinette.fr/commander.html',
       locale: 'fr',
+      // Click & Collect : infos de retrait demandées sur la page de paiement
+      phone_number_collection: { enabled: true },
+      custom_fields: [
+        {
+          key: 'nom_retrait',
+          label: { type: 'custom', custom: 'Nom pour le retrait' },
+          type: 'text',
+        },
+        {
+          key: 'date_retrait',
+          label: { type: 'custom', custom: 'Date de retrait souhaitée' },
+          type: 'text',
+        },
+        {
+          key: 'creneau_retrait',
+          label: { type: 'custom', custom: 'Créneau de retrait' },
+          type: 'dropdown',
+          dropdown: {
+            options: [
+              { label: 'Matin (7h - 12h)', value: 'matin' },
+              { label: 'Après-midi (14h - 19h)', value: 'apres_midi' },
+            ],
+          },
+        },
+      ],
     });
 
     return res.status(200).json({ url: session.url });
