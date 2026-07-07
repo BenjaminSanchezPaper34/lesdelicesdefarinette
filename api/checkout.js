@@ -65,7 +65,7 @@ module.exports = async (req, res) => {
         },
         {
           key: 'date_retrait',
-          label: { type: 'custom', custom: 'Date de retrait souhaitée' },
+          label: { type: 'custom', custom: 'Date de retrait (commander la veille avant 18h)' },
           type: 'text',
         },
         {
@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
           type: 'dropdown',
           dropdown: {
             options: [
-              { label: 'Matin (7h - 12h)', value: 'matin' },
+              { label: 'Matin (9h - 12h)', value: 'matin' },
               { label: 'Après-midi (14h - 19h)', value: 'apresmidi' },
             ],
           },
