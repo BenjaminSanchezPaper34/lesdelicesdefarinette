@@ -75,7 +75,7 @@ module.exports = async (req, res) => {
           dropdown: {
             options: [
               { label: 'Matin (7h - 12h)', value: 'matin' },
-              { label: 'Après-midi (14h - 19h)', value: 'apres_midi' },
+              { label: 'Après-midi (14h - 19h)', value: 'apresmidi' },
             ],
           },
         },
