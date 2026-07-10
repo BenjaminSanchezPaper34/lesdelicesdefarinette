@@ -2,20 +2,20 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Prix valides (sécurité : on n'accepte que ces IDs)
 const VALID_PRICES = new Set([
-  'price_1TLqK3KNVCaTtYJEYLSCyebI', // Entremet Fraise 8.50€
-  'price_1TLqKQKNVCaTtYJEy4XN6scw', // Entremet Mangue 8.50€
-  'price_1TLqKRKNVCaTtYJEhYUx8OmO', // Entremet Citron 8.50€
-  'price_1TLqKSKNVCaTtYJE0geDcME2', // Entremet Pistache 8.50€
-  'price_1TLqvHKNVCaTtYJE3K5M8XTS', // Entremet Pécan 8.50€ (ex Noix de Cajou)
-  'price_1TLqvIKNVCaTtYJEsoPUJZSY', // Entremet Pêche 8.50€
-  'price_1TLqvJKNVCaTtYJEemTwg346', // Entremet Arachide 8.50€
-  'price_1TqUBzKNVCaTtYJE2Wx6e4xl', // Entremet Vanille 8.50€
-  'price_1TqUBzKNVCaTtYJEeZf6oEQ9', // Entremet Pomme 8.50€
-  'price_1TqUC0KNVCaTtYJEBYZ9kzfF', // Entremet Framboise 8.50€
-  'price_1TqUC0KNVCaTtYJEIZUPD7JM', // Entremet Coco 8.50€
-  'price_1TqUC1KNVCaTtYJET6LRaElX', // Entremet Cabosse 8.50€
-  'price_1TqUC1KNVCaTtYJE85Vf6Nuv', // Entremet Myrtille 8.50€
-  'price_1TqUC2KNVCaTtYJEgC7KWFFA', // Entremet Tulipe 8.50€
+  'price_1TrhzQKNVCaTtYJEVOT02CcC', // Entremet Fraise 6.90€
+  'price_1TrhzRKNVCaTtYJEHGmVByrS', // Entremet Mangue 6.90€
+  'price_1TrhzSKNVCaTtYJET45baNyG', // Entremet Citron 6.90€
+  'price_1TrhzTKNVCaTtYJENMhmYplX', // Entremet Pistache 6.90€
+  'price_1TrhzVKNVCaTtYJEo5BIaPwn', // Entremet Pécan 6.90€ (ex Noix de Cajou)
+  'price_1TrhzWKNVCaTtYJEdg8rxaEP', // Entremet Pêche 6.90€
+  'price_1TrhzXKNVCaTtYJElbd3UcBW', // Entremet Arachide 6.90€
+  'price_1TrhzZKNVCaTtYJEbBTavLs2', // Entremet Vanille 6.90€
+  'price_1TrhzaKNVCaTtYJEf36J9rII', // Entremet Pomme 6.90€
+  'price_1TrhzbKNVCaTtYJE3v3VCZkK', // Entremet Framboise 6.90€
+  'price_1TrhzdKNVCaTtYJEMuUHMuFv', // Entremet Coco 6.90€
+  'price_1TrhzeKNVCaTtYJEn2a87Po0', // Entremet Cabosse 6.90€
+  'price_1TrhzfKNVCaTtYJEqZB8OYh3', // Entremet Myrtille 6.90€
+  'price_1TrhzhKNVCaTtYJEVwlmRXtR', // Entremet Tulipe 6.90€
 ]);
 
 module.exports = async (req, res) => {
