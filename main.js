@@ -152,6 +152,62 @@ document.querySelectorAll('.section-ornament').forEach((el) => {
 });
 
 // ==========================================
+// AVIS GOOGLE — note + avis à jour via /api/reviews
+// En cas d'échec (API non configurée, réseau), les valeurs
+// statiques du HTML restent affichées.
+// ==========================================
+(async () => {
+  function esc(s) {
+    const div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  // "Jean Dupont" → "Jean D." (style des cartes du site)
+  function shortName(name) {
+    const parts = name.trim().split(/\s+/);
+    if (parts.length < 2) return parts[0];
+    return parts[0] + ' ' + parts[1][0].toUpperCase() + '.';
+  }
+
+  try {
+    const res = await fetch('/api/reviews');
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data.rating || !data.count) return;
+
+    const noteFr = String(data.rating).replace('.', ',');
+    const stars = document.getElementById('avis-stars');
+    const fill = document.getElementById('avis-stars-fill');
+    const note = document.getElementById('avis-note');
+    if (fill) fill.style.width = (data.rating / 5) * 100 + '%';
+    if (stars) stars.setAttribute('aria-label', noteFr + ' sur 5');
+    if (note) note.textContent = noteFr + ' sur Google · ' + data.count + ' avis';
+
+    // 3 avis 5★ récents, longueur raisonnable pour tenir dans les cartes
+    const good = (data.reviews || []).filter(
+      (r) => r.rating === 5 && r.text && r.text.length >= 40 && r.text.length <= 280
+    );
+    const cards = document.getElementById('avis-cards');
+    if (cards && good.length >= 3) {
+      cards.innerHTML = good
+        .slice(0, 3)
+        .map(
+          (r) => `
+        <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+          <div class="flex items-center gap-0.5 text-dore text-xs mb-3">★★★★★</div>
+          <p class="text-white/40 text-sm leading-relaxed italic mb-4">"${esc(r.text)}"</p>
+          <footer class="text-white/25 text-xs">— ${esc(shortName(r.author))}</footer>
+        </blockquote>`
+        )
+        .join('');
+    }
+  } catch (e) {
+    // silencieux : le contenu statique reste en place
+  }
+})();
+
+// ==========================================
 // CREATION SCROLL — drag to scroll
 // ==========================================
 const scrollContainer = document.querySelector('.creation-scroll');

@@ -519,16 +519,16 @@
       <!-- Note Google -->
       <div class="text-center mb-10 reveal">
         <a href="https://g.page/r/CYzqfegYlZ1DEAE/review" target="_blank" rel="noopener" class="inline-flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div class="relative inline-block text-lg leading-none" aria-label="4,3 sur 5">
+          <div id="avis-stars" class="relative inline-block text-lg leading-none" aria-label="4,3 sur 5">
             <div class="text-white/20 tracking-[0.1em]">★★★★★</div>
-            <div class="absolute inset-0 text-dore tracking-[0.1em] overflow-hidden" style="width:86%">★★★★★</div>
+            <div id="avis-stars-fill" class="absolute inset-0 text-dore tracking-[0.1em] overflow-hidden" style="width:86%">★★★★★</div>
           </div>
-          <span class="text-white/50 text-base font-medium">4,3 sur Google · 115 avis</span>
+          <span id="avis-note" class="text-white/50 text-base font-medium">4,3 sur Google · 115 avis</span>
         </a>
       </div>
 
-      <!-- Avis réels -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+      <!-- Avis réels (remplacés par les 3 derniers avis 5★ via /api/reviews si disponible) -->
+      <div id="avis-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
         <blockquote class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
           <div class="flex items-center gap-0.5 text-dore text-xs mb-3">★★★★★</div>
           <p class="text-white/40 text-sm leading-relaxed italic mb-4">"Sans aucun doute, les meilleures pâtisseries de Vias ! Large choix de pâtisseries, pains, boissons, personnel très accueillant. Je recommande les yeux fermés"</p>
