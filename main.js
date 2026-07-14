@@ -152,29 +152,6 @@ document.querySelectorAll('.section-ornament').forEach((el) => {
 });
 
 // ==========================================
-// ATELIER — rotation des 3 vidéos avec fondu
-// ==========================================
-const atelierVideo = document.getElementById('atelier-video');
-if (atelierVideo) {
-  const playlist = [
-    'assets/img/atelier-vertical.mp4',
-    'assets/img/atelier-vertical-2.mp4',
-    'assets/img/atelier-vertical-3.mp4',
-  ];
-  let current = 0;
-
-  atelierVideo.addEventListener('ended', () => {
-    current = (current + 1) % playlist.length;
-    atelierVideo.style.opacity = '0';
-    setTimeout(() => {
-      atelierVideo.src = playlist[current];
-      atelierVideo.play().catch(() => {});
-      atelierVideo.style.opacity = '1';
-    }, 500);
-  });
-}
-
-// ==========================================
 // AVIS GOOGLE — note + avis à jour via /api/reviews
 // En cas d'échec (API non configurée, réseau), les valeurs
 // statiques du HTML restent affichées.

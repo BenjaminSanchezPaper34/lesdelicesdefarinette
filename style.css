@@ -93,11 +93,13 @@ body::after {
 }
 
 /* Horizontal scroll — hide scrollbar */
-.creation-scroll {
+.creation-scroll,
+.atelier-videos {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.creation-scroll::-webkit-scrollbar {
+.creation-scroll::-webkit-scrollbar,
+.atelier-videos::-webkit-scrollbar {
   display: none;
 }
 
