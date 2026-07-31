@@ -1,3 +1,7 @@
+# Tous les crawlers sont les bienvenus, y compris les crawlers IA
+# (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.)
+# Résumé du site pour les IA : https://lesdelicesdefarinette.fr/llms.txt
+
 User-agent: *
 Allow: /
 Disallow: /commander.html
