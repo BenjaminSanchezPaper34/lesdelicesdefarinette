@@ -152,6 +152,24 @@ document.querySelectorAll('.section-ornament').forEach((el) => {
 });
 
 // ==========================================
+// ÉVÉNEMENTS — Vercel Web Analytics (tel, réseaux, avis, itinéraire)
+// ==========================================
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if (!a || typeof window.va !== 'function') return;
+  const href = a.getAttribute('href') || '';
+  let name = a.dataset.track;
+  if (!name) {
+    if (href.startsWith('tel:')) name = 'tel';
+    else if (href.includes('instagram.com')) name = 'instagram';
+    else if (href.includes('tiktok.com')) name = 'tiktok';
+    else if (href.includes('facebook.com')) name = 'facebook';
+    else if (href.includes('g.page')) name = 'avis_google';
+  }
+  if (name) window.va('event', { name });
+});
+
+// ==========================================
 // AVIS GOOGLE — note + avis à jour via /api/reviews
 // En cas d'échec (API non configurée, réseau), les valeurs
 // statiques du HTML restent affichées.

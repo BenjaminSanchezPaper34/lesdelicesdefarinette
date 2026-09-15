@@ -143,6 +143,7 @@ cartCheckout.addEventListener('click', async () => {
 
   cartCheckout.disabled = true;
   cartCheckout.textContent = 'Redirection\u2026';
+  if (typeof window.va === 'function') window.va('event', { name: 'commande' });
 
   try {
     const res = await fetch('/api/checkout', {
