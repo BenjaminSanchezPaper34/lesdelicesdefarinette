@@ -159,7 +159,7 @@ cartCheckout.addEventListener('click', async () => {
       throw new Error(data.error || 'Erreur inconnue');
     }
   } catch (err) {
-    alert('Erreur lors du paiement. Veuillez r\u00e9essayer.');
+    alert('La boutique est fermée pour la saison. Réouverture au printemps !');
     cartCheckout.disabled = false;
     cartCheckout.textContent = 'Payer ma commande';
   }

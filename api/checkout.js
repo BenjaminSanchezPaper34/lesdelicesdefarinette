@@ -28,6 +28,11 @@ module.exports = async (req, res) => {
     return res.status(200).end();
   }
 
+  // Hivernage : boutique fermée jusqu'au printemps
+  if (process.env.SHOP_OPEN !== 'true') {
+    return res.status(503).json({ error: 'Boutique fermée pour la saison, réouverture au printemps' });
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Méthode non autorisée' });
   }
